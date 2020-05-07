@@ -3,29 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55F393CAFC7684B31CE60C06 /* Pods_ShareIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FF75CBF7E9463F062A3BA9 /* Pods_ShareIt.framework */; };
 		D02763A12464765A00C125DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02763A02464765A00C125DB /* LoginViewController.swift */; };
+		D0371FC424649D5E009F9BE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0371FC324649D5E009F9BE4 /* GoogleService-Info.plist */; };
 		D0AA8E2F2464745A00960CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8E2E2464745A00960CA0 /* AppDelegate.swift */; };
 		D0AA8E312464745A00960CA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8E302464745A00960CA0 /* SceneDelegate.swift */; };
-		D0AA8E332464745A00960CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8E322464745A00960CA0 /* ViewController.swift */; };
+		D0AA8E332464745A00960CA0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8E322464745A00960CA0 /* RegisterViewController.swift */; };
 		D0AA8E362464745A00960CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E342464745A00960CA0 /* Main.storyboard */; };
 		D0AA8E382464745B00960CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E372464745B00960CA0 /* Assets.xcassets */; };
 		D0AA8E3B2464745B00960CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BB1D2FC5F6B0A572B94F696 /* Pods-ShareIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareIt.release.xcconfig"; path = "Target Support Files/Pods-ShareIt/Pods-ShareIt.release.xcconfig"; sourceTree = "<group>"; };
+		2C86CED2BD3D91F4746ECDC3 /* Pods-ShareIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareIt.debug.xcconfig"; path = "Target Support Files/Pods-ShareIt/Pods-ShareIt.debug.xcconfig"; sourceTree = "<group>"; };
 		D02763A02464765A00C125DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D0371FC324649D5E009F9BE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0AA8E2B2464745A00960CA0 /* ShareIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AA8E2E2464745A00960CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0AA8E302464745A00960CA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0AA8E322464745A00960CA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0AA8E322464745A00960CA0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D0AA8E352464745A00960CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0AA8E372464745B00960CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0AA8E3A2464745B00960CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0AA8E3C2464745B00960CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FF75CBF7E9463F062A3BA9 /* Pods_ShareIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F393CAFC7684B31CE60C06 /* Pods_ShareIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0347092A8B297D5D12C0538A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4FF75CBF7E9463F062A3BA9 /* Pods_ShareIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FDED6197E9C0AA46A52031F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C86CED2BD3D91F4746ECDC3 /* Pods-ShareIt.debug.xcconfig */,
+				0BB1D2FC5F6B0A572B94F696 /* Pods-ShareIt.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D0AA8E222464745A00960CA0 = {
 			isa = PBXGroup;
 			children = (
 				D0AA8E2D2464745A00960CA0 /* ShareIt */,
 				D0AA8E2C2464745A00960CA0 /* Products */,
+				1FDED6197E9C0AA46A52031F /* Pods */,
+				0347092A8B297D5D12C0538A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,11 +87,12 @@
 				D0AA8E2E2464745A00960CA0 /* AppDelegate.swift */,
 				D0AA8E302464745A00960CA0 /* SceneDelegate.swift */,
 				D02763A02464765A00C125DB /* LoginViewController.swift */,
-				D0AA8E322464745A00960CA0 /* ViewController.swift */,
+				D0AA8E322464745A00960CA0 /* RegisterViewController.swift */,
 				D0AA8E342464745A00960CA0 /* Main.storyboard */,
 				D0AA8E372464745B00960CA0 /* Assets.xcassets */,
 				D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */,
 				D0AA8E3C2464745B00960CA0 /* Info.plist */,
+				D0371FC324649D5E009F9BE4 /* GoogleService-Info.plist */,
 			);
 			path = ShareIt;
 			sourceTree = "<group>";
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0AA8E3F2464745B00960CA0 /* Build configuration list for PBXNativeTarget "ShareIt" */;
 			buildPhases = (
+				10950568B8DE4CEE02D95445 /* [CP] Check Pods Manifest.lock */,
 				D0AA8E272464745A00960CA0 /* Sources */,
 				D0AA8E282464745A00960CA0 /* Frameworks */,
 				D0AA8E292464745A00960CA0 /* Resources */,
+				358EB0AEAA160140E50B860F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0AA8E3B2464745B00960CA0 /* LaunchScreen.storyboard in Resources */,
+				D0371FC424649D5E009F9BE4 /* GoogleService-Info.plist in Resources */,
 				D0AA8E382464745B00960CA0 /* Assets.xcassets in Resources */,
 				D0AA8E362464745A00960CA0 /* Main.storyboard in Resources */,
 			);
@@ -136,13 +166,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10950568B8DE4CEE02D95445 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShareIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		358EB0AEAA160140E50B860F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareIt/Pods-ShareIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShareIt/Pods-ShareIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareIt/Pods-ShareIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0AA8E272464745A00960CA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D02763A12464765A00C125DB /* LoginViewController.swift in Sources */,
-				D0AA8E332464745A00960CA0 /* ViewController.swift in Sources */,
+				D0AA8E332464745A00960CA0 /* RegisterViewController.swift in Sources */,
 				D0AA8E2F2464745A00960CA0 /* AppDelegate.swift in Sources */,
 				D0AA8E312464745A00960CA0 /* SceneDelegate.swift in Sources */,
 			);
@@ -220,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,6 +358,7 @@
 		};
 		D0AA8E402464745B00960CA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C86CED2BD3D91F4746ECDC3 /* Pods-ShareIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +377,7 @@
 		};
 		D0AA8E412464745B00960CA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB1D2FC5F6B0A572B94F696 /* Pods-ShareIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

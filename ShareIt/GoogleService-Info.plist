@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>845845941677-4gr4eb0a992j6aps47jqn9497v24mnpi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.845845941677-4gr4eb0a992j6aps47jqn9497v24mnpi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyARou_8JM2hQQN61eXc9_3CL1EKxWr1Kfs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>845845941677</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Deniz-Cakmak.ShareIt</string>
+	<key>PROJECT_ID</key>
+	<string>shareit-cb684</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shareit-cb684.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:845845941677:ios:1966201b980362ba58e524</string>
+	<key>DATABASE_URL</key>
+	<string>https://shareit-cb684.firebaseio.com</string>
+</dict>
+</plist>
