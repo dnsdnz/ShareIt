@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>845845941677-4gr4eb0a992j6aps47jqn9497v24mnpi.apps.googleusercontent.com</string>
+	<string>369840441542-9iv4e2dnmcihkapprhkqgqfkgfun2t9g.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.845845941677-4gr4eb0a992j6aps47jqn9497v24mnpi</string>
+	<string>com.googleusercontent.apps.369840441542-9iv4e2dnmcihkapprhkqgqfkgfun2t9g</string>
 	<key>API_KEY</key>
-	<string>AIzaSyARou_8JM2hQQN61eXc9_3CL1EKxWr1Kfs</string>
+	<string>AIzaSyCFarbTcvMpPYlUZgXcrl-UO3z4op3uEZA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>845845941677</string>
+	<string>369840441542</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Deniz-Cakmak.ShareIt</string>
 	<key>PROJECT_ID</key>
-	<string>shareit-cb684</string>
+	<string>shareit-879a0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>shareit-cb684.appspot.com</string>
+	<string>shareit-879a0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:845845941677:ios:1966201b980362ba58e524</string>
+	<string>1:369840441542:ios:217a0dac782b1180e32fc7</string>
 	<key>DATABASE_URL</key>
-	<string>https://shareit-cb684.firebaseio.com</string>
+	<string>https://shareit-879a0.firebaseio.com</string>
 </dict>
 </plist>
