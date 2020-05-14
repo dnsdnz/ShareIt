@@ -17,6 +17,8 @@
 		D0AA8E382464745B00960CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E372464745B00960CA0 /* Assets.xcassets */; };
 		D0AA8E3B2464745B00960CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */; };
 		D0CD7FCC246D914D00D9EC0F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */; };
+		D0CD7FD0246DC65300D9EC0F /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */; };
+		D0CD7FD2246DC66700D9EC0F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		D0AA8E3A2464745B00960CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0AA8E3C2464745B00960CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
+		D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		F4FF75CBF7E9463F062A3BA9 /* Pods_ShareIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,8 @@
 				D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */,
 				D0AA8E3C2464745B00960CA0 /* Info.plist */,
 				D02FCD9D2466FCB40003C029 /* GoogleService-Info.plist */,
+				D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */,
+				D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */,
 			);
 			path = ShareIt;
 			sourceTree = "<group>";
@@ -218,8 +224,10 @@
 			files = (
 				D02763A12464765A00C125DB /* LoginViewController.swift in Sources */,
 				D0AA8E332464745A00960CA0 /* RegisterViewController.swift in Sources */,
+				D0CD7FD2246DC66700D9EC0F /* UserProfileViewController.swift in Sources */,
 				D0AA8E2F2464745A00960CA0 /* AppDelegate.swift in Sources */,
 				D0CD7FCC246D914D00D9EC0F /* MapViewController.swift in Sources */,
+				D0CD7FD0246DC65300D9EC0F /* LocationListViewController.swift in Sources */,
 				D0AA8E312464745A00960CA0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

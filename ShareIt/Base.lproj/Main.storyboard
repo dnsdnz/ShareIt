@@ -324,6 +324,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="showList:" destination="tfa-0G-iFE" eventType="touchUpInside" id="bDN-KS-5zJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-hl-Bab">
                                 <rect key="frame" x="207" y="792" width="207" height="70"/>
@@ -332,6 +335,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="showProfile:" destination="tfa-0G-iFE" eventType="touchUpInside" id="Zgl-hU-L4f"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-grey" translatesAutoresizingMaskIntoConstraints="NO" id="3Zm-5v-cP4">
                                 <rect key="frame" x="88.666666666666671" y="800" width="30" height="35"/>
@@ -340,7 +346,7 @@
                                     <constraint firstAttribute="width" constant="30" id="jcK-cD-UJI"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info-grey" translatesAutoresizingMaskIntoConstraints="NO" id="9b0-nd-8L4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adminis" translatesAutoresizingMaskIntoConstraints="NO" id="9b0-nd-8L4">
                                 <rect key="frame" x="295.66666666666669" y="800" width="30" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="m9V-co-zyc"/>
@@ -426,7 +432,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info-grey" width="133.33332824707031" height="133.33332824707031"/>
+        <image name="adminis" width="180" height="280"/>
         <image name="pin-grey" width="133.33332824707031" height="133.33332824707031"/>
     </resources>
 </document>
