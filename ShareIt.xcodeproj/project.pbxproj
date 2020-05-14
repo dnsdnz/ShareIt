@@ -95,13 +95,13 @@
 				D02763A02464765A00C125DB /* LoginViewController.swift */,
 				D0AA8E322464745A00960CA0 /* RegisterViewController.swift */,
 				D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */,
+				D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */,
+				D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */,
 				D0AA8E342464745A00960CA0 /* Main.storyboard */,
 				D0AA8E372464745B00960CA0 /* Assets.xcassets */,
 				D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */,
 				D0AA8E3C2464745B00960CA0 /* Info.plist */,
 				D02FCD9D2466FCB40003C029 /* GoogleService-Info.plist */,
-				D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */,
-				D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */,
 			);
 			path = ShareIt;
 			sourceTree = "<group>";
