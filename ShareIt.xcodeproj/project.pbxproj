@@ -16,6 +16,7 @@
 		D0AA8E362464745A00960CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E342464745A00960CA0 /* Main.storyboard */; };
 		D0AA8E382464745B00960CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E372464745B00960CA0 /* Assets.xcassets */; };
 		D0AA8E3B2464745B00960CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */; };
+		D0CD7FCC246D914D00D9EC0F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		D0AA8E372464745B00960CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0AA8E3A2464745B00960CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0AA8E3C2464745B00960CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F4FF75CBF7E9463F062A3BA9 /* Pods_ShareIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				D0AA8E302464745A00960CA0 /* SceneDelegate.swift */,
 				D02763A02464765A00C125DB /* LoginViewController.swift */,
 				D0AA8E322464745A00960CA0 /* RegisterViewController.swift */,
+				D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */,
 				D0AA8E342464745A00960CA0 /* Main.storyboard */,
 				D0AA8E372464745B00960CA0 /* Assets.xcassets */,
 				D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 				D02763A12464765A00C125DB /* LoginViewController.swift in Sources */,
 				D0AA8E332464745A00960CA0 /* RegisterViewController.swift in Sources */,
 				D0AA8E2F2464745A00960CA0 /* AppDelegate.swift in Sources */,
+				D0CD7FCC246D914D00D9EC0F /* MapViewController.swift in Sources */,
 				D0AA8E312464745A00960CA0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

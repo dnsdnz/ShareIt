@@ -16,13 +16,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passText: UITextField!
     
     
-    
     @IBAction func loginButton(_ sender: Any) {
         
         Auth.auth().signIn(withEmail: mailText.text!, password: passText.text!) { (user, error) in
            if error == nil{
-             self.performSegue(withIdentifier: "MapViewController", sender: self)
+       let mapPage: MapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                      
+            self.navigationController?.pushViewController(mapPage, animated: true)
                           }
+            
             else{
              let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
              let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -33,15 +35,12 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
     @IBAction func goRegister(_ sender: Any) {
         
         let regPage: RegisterViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
             
             self.navigationController?.pushViewController(regPage, animated: true)
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +48,4 @@ class LoginViewController: UIViewController {
     
     }
     
-
-
-
 }
