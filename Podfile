@@ -8,5 +8,6 @@ target 'ShareIt' do
   # Pods for ShareIt
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
 end

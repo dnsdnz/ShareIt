@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class UserProfileViewController: UIViewController {
 
+   var ref = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -18,11 +18,17 @@ class MapViewController: UIViewController {
    
     
     @IBAction func showList(_ sender: Any) {
+        let tablePage: LocationListViewController = self.storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as! LocationListViewController
+                       
+                 self.navigationController?.pushViewController(tablePage, animated: true)
     }
     
     
     
     @IBAction func showProfile(_ sender: Any) {
+        let profilePage: UserProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+                       
+                 self.navigationController?.pushViewController(profilePage, animated: true)
     }
     
 
