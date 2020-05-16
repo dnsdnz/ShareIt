@@ -12,10 +12,20 @@ import Firebase
 class UserProfileViewController: UIViewController {
 
     
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtSurname: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtPhone: UITextField!
+    @IBOutlet weak var pickCity: UIPickerView!
+    @IBOutlet weak var pickGender: UIPickerView!
+    @IBOutlet weak var pickAge: UIPickerView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ref = Database.database().reference()
+        //let ref = Database.database().reference()
         
         // ref.child("1/name").setValue("DenizC")  //change value in database
         
@@ -43,5 +53,7 @@ class UserProfileViewController: UIViewController {
     
     }
     
-
+    @IBAction func saveInfo(_ sender: Any) {
+      }
+      
 }
