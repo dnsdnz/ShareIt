@@ -46,7 +46,6 @@ class RegisterViewController: UIViewController {
     }
     
     
-    
     @IBAction func goLogin(_ sender: Any) {
         let loginPage: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                   
