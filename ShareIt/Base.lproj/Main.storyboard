@@ -701,7 +701,6 @@
                         <outlet property="txtPassword" destination="RVt-ew-9MK" id="jne-kN-H3H"/>
                         <outlet property="txtPhone" destination="s0o-pP-LwH" id="R6n-cq-UCq"/>
                         <outlet property="txtSurname" destination="h6F-vW-uk5" id="TkQ-qe-8m1"/>
-                        <outlet property="updateInfo" destination="oST-DC-D9L" id="64q-8i-ljJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihC-uP-cyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

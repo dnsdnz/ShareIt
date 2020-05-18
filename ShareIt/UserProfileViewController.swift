@@ -21,29 +21,35 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var pickGender: UIPickerView!
     @IBOutlet weak var pickAge: UIPickerView!
     
+    var uid = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let ref = Database.database().reference()
+        print(uid)
         
+        let ref = Database.database().reference(withPath: "ShareIt")
+       
+       
+        //ref.child("1").observeSingleEvent(of: .value){ (snapshot) in
+                    
+            //let value = snapshot.value as? NSDictionary
+            
+           // let email = value?["email"] as? String
+            //let password = value?["password"] as? String
+     
+           // self.txtEmail.text = email
+           // self.txtPassword.text = password
+            
+            
+
         // ref.child("1/name").setValue("DenizC")  //change value in database
         
       /*  ref.childByAutoId().setValue(["name":"BDeniz","surname":"Cakmaz","city":"Gaziantep","password":"12345678","email":"mail@mail.com","age":"21","gender":"female","role":"U","phone":"12345678"])
         
             */   //Add new user
        
-     /*   ref.child("1").observeSingleEvent(of: .value){ (snapshot) in
-                    
-            let value = snapshot.value as? NSDictionary
-            
-            let name = value?["name"] as? String
-            
-            print(name)
-        
-        
-        
-        }
+     /*
         */         //read data from firebase
         
         

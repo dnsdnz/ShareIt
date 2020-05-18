@@ -20,9 +20,24 @@ class LoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: mailText.text!, password: passText.text!) { (user, error) in
            if error == nil{
-       let mapPage: MapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-                      
-            self.navigationController?.pushViewController(mapPage, animated: true)
+            
+           // let ref = Database.database().reference()
+            let user = Auth.auth().currentUser
+            
+               if let user = user {
+  
+                 let uid = user.uid
+                print(uid)
+                
+                let mapPage: MapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                mapPage.uid = uid
+                     self.navigationController?.pushViewController(mapPage, animated: true)
+                
+                // ref.child(uid).setValue(["password":"12345678","email":"mail@mail.com","role":"U"])
+
+               }
+            
+
                           }
             
             else{

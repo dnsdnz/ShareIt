@@ -15,7 +15,15 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-   
+   var uid = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("uid is ")
+                print(uid)
+
+    }
+    
     
     @IBAction func showList(_ sender: Any) {
         let tablePage: LocationListViewController = self.storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as! LocationListViewController
