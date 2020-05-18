@@ -28,20 +28,20 @@ class UserProfileViewController: UIViewController {
         
         print(uid)
         
-        let ref = Database.database().reference(withPath: "ShareIt")
+        let ref = Database.database().reference()
        
-       
-        //ref.child("1").observeSingleEvent(of: .value){ (snapshot) in
+        ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
                     
-            //let value = snapshot.value as? NSDictionary
+            let value = snapshot.value as? NSDictionary
             
-           // let email = value?["email"] as? String
+            let email = value?["email"] as? String
+            print(email)
             //let password = value?["password"] as? String
      
-           // self.txtEmail.text = email
+            self.txtEmail.text = email
            // self.txtPassword.text = password
             
-            
+        }
 
         // ref.child("1/name").setValue("DenizC")  //change value in database
         

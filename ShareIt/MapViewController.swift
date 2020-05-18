@@ -20,7 +20,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("uid is ")
-                print(uid)
+         print(uid)
 
     }
     
@@ -35,6 +35,8 @@ class MapViewController: UIViewController {
     
     @IBAction func showProfile(_ sender: Any) {
         let profilePage: UserProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+        
+                profilePage.uid = uid
                        
                  self.navigationController?.pushViewController(profilePage, animated: true)
     }

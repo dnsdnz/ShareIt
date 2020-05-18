@@ -29,10 +29,16 @@ class RegisterViewController: UIViewController {
         else{
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPass.text!){ (user, error) in
          if error == nil {
+            
+            let ref = Database.database().reference()
+            
+            ref.childByAutoId().setValue(["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"])
+            
            let logPage: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
            
            self.navigationController?.pushViewController(logPage, animated: true)
                         }
+            
          else{
            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
