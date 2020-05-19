@@ -1,5 +1,5 @@
 //
-//  AdminPageViewController.swift
+//  AdminEditProductViewController.swift
 //  ShareIt
 //
 //  Created by Deniz MacBook Air on 19.05.2020.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AdminPageViewController: UIViewController {
+class AdminEditProductViewController: UIViewController {
 
-      var uid = ""
+    
     
     
     
@@ -25,6 +25,7 @@ class AdminPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
 
 
 }
