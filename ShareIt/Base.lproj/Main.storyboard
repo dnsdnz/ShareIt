@@ -707,6 +707,31 @@
             </objects>
             <point key="canvasLocation" x="5234.7826086956529" y="85.714285714285708"/>
         </scene>
+        <!--Admin Page View Controller-->
+        <scene sceneID="Vow-2q-OZw">
+            <objects>
+                <viewController storyboardIdentifier="AdminPageViewController" id="QFW-lZ-tAH" customClass="AdminPageViewController" customModule="ShareIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lal-i2-wj9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADMIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqr-qQ-1ZF">
+                                <rect key="frame" x="108" y="88" width="198" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.22207513449999999" green="0.40779936309999998" blue="0.60326343770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PBL-zo-73H"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SRQ-nl-bPD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fu4-S6-460" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6222" y="86"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="b3s-tz-KL3">
             <objects>
@@ -760,6 +785,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7a-WU-0eJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5235" y="-664"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pLH-JB-oEX">
+            <objects>
+                <navigationController storyboardIdentifier="adminNav" automaticallyAdjustsScrollViewInsets="NO" id="Pii-8H-a6c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VHP-6j-eaB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QFW-lZ-tAH" kind="relationship" relationship="rootViewController" id="n5V-Xg-AnG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ww3-BI-zV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6222" y="-664"/>
         </scene>
     </scenes>
     <resources>

@@ -26,12 +26,25 @@ class LoginViewController: UIViewController {
                if let user = user {
   
                  let uid = user.uid
-                print(uid)
+                  let ref = Database.database().reference()
                 
-                let mapPage: MapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-                mapPage.uid = uid
-                     self.navigationController?.pushViewController(mapPage, animated: true)
-               }
+                ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
+                    
+                        let value = snapshot.value as? NSDictionary
+                        let role = value?["role"] as? String
+                    
+                    if(role == "A"){
+                        let adminPage: AdminPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdminPageViewController") as! AdminPageViewController
+                         adminPage.uid = uid
+                              self.navigationController?.pushViewController(adminPage, animated: true)
+                    }
+                    else{
+                        let mapPage: MapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                            mapPage.uid = uid
+                            self.navigationController?.pushViewController(mapPage, animated: true)
+                    }
+                    }
+                        }
                           }
             
             else{
