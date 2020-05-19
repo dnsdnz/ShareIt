@@ -27,30 +27,19 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         
         print(uid)
-        
         let ref = Database.database().reference()
-        
-        let name = txtName.text
-        let surname = txtSurname.text
-        let password = txtPassword.text
-        let phone = txtPhone.text
-       // let city = pickCity.selectedRow(inComponent: <#T##Int#>)
-       // let gender = pickGender
-        //let age = pickAge
-        
-        ref.child(uid).setValue(["name":"BDeniz","surname":"Cakmaz","city":"Gaziantep","password":"12345678","email":"mail@mail.com","age":"21","gender":"female","role":"U","phone":"12345678"])
-        
+    
         ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
                     
         
             let value = snapshot.value as? NSDictionary
-            
+
             let email = value?["name"] as? String
-            print(email)
-            //let password = value?["password"] as? String
-     
+            let password = value?["password"] as? String
+            
             self.txtEmail.text = email
-           // self.txtPassword.text = password
+            self.txtPassword.text = password
+            
             
         }
 
@@ -71,6 +60,18 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func saveInfo(_ sender: Any) {
+        
+         let ref = Database.database().reference()
+         
+         let name = txtName.text
+         let surname = txtSurname.text
+         let password = txtPassword.text
+         let phone = txtPhone.text
+        // let city = pickCity
+        // let gender = pickGender
+        //let age = pickAge
+        
+        ref.child(uid).setValue(["name":name,"surname":surname,"city":"Gaziantep","password":password,"age":"21","gender":"female","phone":phone])
       }
       
 }
