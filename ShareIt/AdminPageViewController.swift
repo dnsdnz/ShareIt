@@ -7,24 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class AdminPageViewController: UIViewController {
 
-      var uid = ""
+  
     
+       var uid = ""
+     
     
+       override func viewDidLoad() {
+           super.viewDidLoad()
+  
+       }
     
-    
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-
+   
+     
+ 
 }

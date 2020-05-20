@@ -10,17 +10,18 @@ import UIKit
 import Firebase
 
 class LocationListViewController: UIViewController {
-
-  // let ref = Database.database().reference(withPath: "locations")
     
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    
+   override func viewDidLoad() {
+    
+          super.viewDidLoad()
 
+          // Do any additional setup after loading the view.
+      }
+      
 
     }
     
 
    
-
-}

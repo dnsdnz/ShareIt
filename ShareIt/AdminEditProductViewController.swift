@@ -13,12 +13,6 @@ class AdminEditProductViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
