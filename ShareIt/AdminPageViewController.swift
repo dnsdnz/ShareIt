@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-class AdminPageViewController: UIViewController {
+class AdminPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+ 
 
-  
     @IBOutlet weak var tableView: UITableView!
     
         var uid = ""
-        var locations = [""]
+        var locations = ["Ankara","Gaziantep"]
         let ref = Database.database().reference().child("products")
 
     
@@ -23,6 +23,20 @@ class AdminPageViewController: UIViewController {
            super.viewDidLoad()
   
        }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return locations.count
+     }
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:ProductTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductTableViewCell
+        
+        cell.lblName.text = locations[indexPath.row]
+  
+        return cell
+     }
+     
     
    
      

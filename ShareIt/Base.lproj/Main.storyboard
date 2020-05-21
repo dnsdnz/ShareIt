@@ -672,21 +672,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMX-eC-ORe">
-                                                    <rect key="frame" x="19.999999999999996" y="26" width="41.666666666666657" height="51"/>
+                                                    <rect key="frame" x="20" y="11" width="362" height="81"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="VMX-eC-ORe" secondAttribute="trailing" constant="352.33333333333337" id="BJE-CT-tf7"/>
-                                                <constraint firstItem="VMX-eC-ORe" firstAttribute="top" secondItem="Qqz-Nr-ER5" secondAttribute="topMargin" constant="15" id="YVI-zp-pLT"/>
-                                                <constraint firstItem="VMX-eC-ORe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qqz-Nr-ER5" secondAttribute="leadingMargin" id="cDh-pN-K7N"/>
-                                                <constraint firstItem="VMX-eC-ORe" firstAttribute="centerY" secondItem="Qqz-Nr-ER5" secondAttribute="centerY" id="jDA-Sx-PA5"/>
+                                                <constraint firstItem="VMX-eC-ORe" firstAttribute="top" secondItem="Qqz-Nr-ER5" secondAttribute="topMargin" id="9zB-Cb-X7i"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VMX-eC-ORe" secondAttribute="trailing" constant="12" id="Yyt-e9-sy0"/>
+                                                <constraint firstItem="VMX-eC-ORe" firstAttribute="bottom" secondItem="Qqz-Nr-ER5" secondAttribute="bottomMargin" id="iDR-fe-ZOn"/>
+                                                <constraint firstItem="VMX-eC-ORe" firstAttribute="leading" secondItem="Qqz-Nr-ER5" secondAttribute="leadingMargin" id="iPJ-Rp-15x"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblName" destination="VMX-eC-ORe" id="Ngm-aa-vY0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QFW-lZ-tAH" id="YGL-L4-49E"/>
+                                    <outlet property="delegate" destination="QFW-lZ-tAH" id="jMf-mc-Kd9"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

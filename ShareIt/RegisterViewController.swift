@@ -30,10 +30,13 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPass.text!){ (user, error) in
          if error == nil {
             
-    
+              let user = Auth.auth().currentUser
+            let uid = user!.uid
+            
             let ref = Database.database().reference().child("users")
             
-            ref.childByAutoId().setValue(["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"])
+            ref.child(uid).setValue(["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"])
+         
             
            let logPage: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
            
