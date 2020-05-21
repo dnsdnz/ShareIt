@@ -11,6 +11,7 @@ import Firebase
 
 class LocationListViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     
     
    override func viewDidLoad() {

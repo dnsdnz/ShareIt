@@ -30,7 +30,8 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPass.text!){ (user, error) in
          if error == nil {
             
-            let ref = Database.database().reference()
+    
+            let ref = Database.database().reference().child("users")
             
             ref.childByAutoId().setValue(["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"])
             

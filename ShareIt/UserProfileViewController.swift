@@ -27,8 +27,9 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         
         print(uid)
-        let ref = Database.database().reference()
-    
+      
+        let ref = Database.database().reference().child("users")
+        
         ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
                     
         
