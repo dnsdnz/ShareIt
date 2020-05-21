@@ -17,10 +17,16 @@ class AdminPageViewController: UIViewController, UITableViewDelegate, UITableVie
         var uid = ""
         var locations = ["Ankara","Gaziantep"]
         let ref = Database.database().reference().child("products")
-
     
        override func viewDidLoad() {
            super.viewDidLoad()
+        
+        /*        ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
+                         
+                             let value = snapshot.value as? NSDictionary
+                             let productId = value?["name"] as? String
+                 
+                         } */
   
        }
     
@@ -36,6 +42,15 @@ class AdminPageViewController: UIViewController, UITableViewDelegate, UITableVie
   
         return cell
      }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           
+           let detail:AdminEditProductViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdminEditProductViewController") as! AdminEditProductViewController
+          
+            detail.productID = locations[indexPath.row]
+         
+           self.navigationController?.pushViewController(detail, animated: true)
+       }
      
     
    

@@ -62,7 +62,7 @@ class UserProfileViewController: UIViewController {
     
     @IBAction func saveInfo(_ sender: Any) {
         
-         let ref = Database.database().reference()
+        let ref = Database.database().reference().child("users")
          
          let name = txtName.text
          let surname = txtSurname.text

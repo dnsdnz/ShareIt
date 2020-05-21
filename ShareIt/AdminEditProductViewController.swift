@@ -10,13 +10,14 @@ import UIKit
 
 class AdminEditProductViewController: UIViewController {
 
-    
+    var productID = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(productID)
 
-        // Do any additional setup after loading the view.
     }
     
 
