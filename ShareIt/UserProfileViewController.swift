@@ -74,5 +74,15 @@ class UserProfileViewController: UIViewController {
         
         ref.child(uid).setValue(["name":name,"surname":surname,"city":"Gaziantep","password":password,"age":"21","gender":"female","phone":phone])
       }
-      
+    
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        try! Auth.auth().signOut()
+        
+        let loginPage: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                  
+            self.navigationController?.pushViewController(loginPage, animated: true)
+    }
+    
 }

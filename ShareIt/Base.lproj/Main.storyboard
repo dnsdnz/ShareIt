@@ -367,6 +367,9 @@
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="elN-Do-B8K">
                                 <rect key="frame" x="0.0" y="88" width="414" height="703"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tfa-0G-iFE" id="THP-eG-XNt"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.56684345010000003" green="0.74607348439999999" blue="0.86952394249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -566,6 +569,14 @@
                                 <state key="normal" title="SAVE"/>
                                 <connections>
                                     <action selector="saveInfo:" destination="0YU-MJ-LC8" eventType="touchUpInside" id="NRY-y9-sS7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae2-tM-D7L">
+                                <rect key="frame" x="313" y="100" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="0YU-MJ-LC8" eventType="touchUpInside" id="3Vj-BM-pl2"/>
                                 </connections>
                             </button>
                         </subviews>

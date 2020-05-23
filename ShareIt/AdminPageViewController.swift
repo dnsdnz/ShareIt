@@ -13,13 +13,24 @@ class AdminPageViewController: UIViewController, UITableViewDelegate, UITableVie
  
 
     @IBOutlet weak var tableView: UITableView!
+
     
+        var post = [String]()
         var uid = ""
         var locations = ["Ankara","Gaziantep"]
-        let ref = Database.database().reference().child("products")
+        let ref = Database.database().reference()
+
     
        override func viewDidLoad() {
            super.viewDidLoad()
+        
+    
+     ref.child("products").child("name").observe(.childAdded) { (snapshot) in
+        print("\((snapshot.value as? NSDictionary)!)")
+        self.tableView.reloadData()
+      }
+        
+        
         
         /*        ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
                          
@@ -31,14 +42,14 @@ class AdminPageViewController: UIViewController, UITableViewDelegate, UITableVie
        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return locations.count
+         return post.count
      }
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:ProductTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductTableViewCell
         
-        cell.lblName.text = locations[indexPath.row]
+        cell.lblName.text = post[indexPath.row]
   
         return cell
      }
@@ -47,7 +58,7 @@ class AdminPageViewController: UIViewController, UITableViewDelegate, UITableVie
            
            let detail:AdminEditProductViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdminEditProductViewController") as! AdminEditProductViewController
           
-            detail.productID = locations[indexPath.row]
+            detail.productID = post[indexPath.row]
          
            self.navigationController?.pushViewController(detail, animated: true)
        }
