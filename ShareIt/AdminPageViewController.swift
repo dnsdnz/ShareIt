@@ -15,56 +15,91 @@ class AdminPageViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
 
     
-        var post = [String]()
         var uid = ""
-        var locations = ["Ankara","Gaziantep"]
-        let ref = Database.database().reference()
-
     
-       override func viewDidLoad() {
-           super.viewDidLoad()
-        
     
-     ref.child("products").child("name").observe(.childAdded) { (snapshot) in
-        print("\((snapshot.value as? NSDictionary)!)")
-        self.tableView.reloadData()
-      }
+    //defining firebase reference var
+    var refArtists: DatabaseReference!
+        
+       
+        //list to store all the artist
+        var artistList = [LocationModel]()
+        
+        public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+            return artistList.count
+        }
         
         
-        
-        /*        ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
-                         
-                             let value = snapshot.value as? NSDictionary
-                             let productId = value?["name"] as? String
-                 
-                         } */
-  
-       }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return post.count
-     }
-     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell:ProductTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductTableViewCell
-        
-        cell.lblName.text = post[indexPath.row]
-  
-        return cell
-     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+            //creating a cell using the custom class
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductTableViewCell
+            
+            //the artist object
+            let artist: LocationModel
+            
+            //getting the artist of selected position
+            artist = artistList[indexPath.row]
+            
+            //adding values to labels
+            cell.lblName.text = artist.name
            
-           let detail:AdminEditProductViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdminEditProductViewController") as! AdminEditProductViewController
-          
-            detail.productID = post[indexPath.row]
-         
-           self.navigationController?.pushViewController(detail, animated: true)
-       }
-     
+           // cell.labelGenre.text = artist.genre
+            
+            //returning cell
+            return cell
+        }
+        
     
-   
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+                   
+            refArtists = Database.database().reference().child("products");
+                   
+                   //observing the data changes
+            refArtists.observe(DataEventType.value, with: { (snapshot) in
+                       
+                       //if the reference have some values
+                       if snapshot.childrenCount > 0 {
+                           
+                           //clearing the list
+                           self.artistList.removeAll()
+                           
+                           //iterating through all the values
+                        for artists in snapshot.children.allObjects as! [DataSnapshot] {
+                               //getting values
+                               let artistObject = artists.value as? [String: AnyObject]
+                               let artistName  = artistObject?["name"]
+                               let artistId  = artistObject?["id"]
+                               let artistGenre = artistObject?["detail"]
+                               
+                               //creating artist object with model and fetched values
+                               let artist = LocationModel(id: artistId as! String?, name: artistName as! String?, genre: artistGenre as! String?)
+                               
+                               //appending it to list
+                               self.artistList.append(artist)
+                            print(artistName)
+                           }
+                           
+                           //reloading the tableview
+                         
+                       }
+                   })
+                   
+               }
+        
+        
+    
+
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated.
+        }
+
+
+    }
+    
+    
      
- 
-}
+
