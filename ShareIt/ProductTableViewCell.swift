@@ -10,7 +10,6 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblName: UILabel!
     
     
     
