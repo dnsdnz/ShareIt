@@ -60,6 +60,7 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
            return cell!
        }
         
+    
    
     }
     

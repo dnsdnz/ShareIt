@@ -30,8 +30,6 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
         ref = Database.database().reference()
         
         databaseHandle =  ref?.child("Products").observe( .childAdded, with: { (snapshot) in
-            
-          //  let post = snapshot.key as? String  //convert value to string
         
             let value = snapshot.value as? NSDictionary
             
@@ -44,7 +42,6 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.tableView.reloadData()
         }
         })
-        
         
         
     }

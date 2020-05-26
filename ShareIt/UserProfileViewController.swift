@@ -45,16 +45,15 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let name = value?["name"] as? String
             let surname = value?["surname"] as? String
             let phone = value?["phone"] as? String
-            let age = value?["age"] as? String
-            let gender = value?["gender"] as? String
-            let region = value?["region"] as? String
+            //let age = value?["age"] as? String
+            //let gender = value?["gender"] as? String
+            //let region = value?["region"] as? String
 
             self.txtEmail.text = email
             self.txtPassword.text = password
             self.txtName.text = name
             self.txtSurname.text = surname
             self.txtPhone.text = phone
-            
             
             
         }
