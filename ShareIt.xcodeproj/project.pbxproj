@@ -22,7 +22,6 @@
 		D0CD7FCC246D914D00D9EC0F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */; };
 		D0CD7FD0246DC65300D9EC0F /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */; };
 		D0CD7FD2246DC66700D9EC0F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */; };
-		D0E5ADD324766C460035B36F /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5ADD224766C460035B36F /* ProductTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 		D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D0CD7FCF246DC65300D9EC0F /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		D0E5ADD224766C460035B36F /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		F4FF75CBF7E9463F062A3BA9 /* Pods_ShareIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,7 +108,6 @@
 				D0CD7FCB246D914D00D9EC0F /* MapViewController.swift */,
 				D0CD7FD1246DC66700D9EC0F /* UserProfileViewController.swift */,
 				D0AA8E302464745A00960CA0 /* SceneDelegate.swift */,
-				D0E5ADD224766C460035B36F /* ProductTableViewCell.swift */,
 				D0AA8E342464745A00960CA0 /* Main.storyboard */,
 				D0AA8E392464745B00960CA0 /* LaunchScreen.storyboard */,
 				D0AA8E372464745B00960CA0 /* Assets.xcassets */,
@@ -241,7 +238,6 @@
 				D077CE6924740B9B00BBE8A8 /* AdminEditProductViewController.swift in Sources */,
 				D0CD7FCC246D914D00D9EC0F /* MapViewController.swift in Sources */,
 				D077CE6724740B1100BBE8A8 /* AdminAddProductViewController.swift in Sources */,
-				D0E5ADD324766C460035B36F /* ProductTableViewCell.swift in Sources */,
 				D0A2E6FB2473FA64004B2DBF /* AdminPageViewController.swift in Sources */,
 				D0CD7FD0246DC65300D9EC0F /* LocationListViewController.swift in Sources */,
 				D0AA8E312464745A00960CA0 /* SceneDelegate.swift in Sources */,

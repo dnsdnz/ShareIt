@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
                if let user = user {
   
                  let uid = user.uid
-                let ref = Database.database().reference().child("users")
+                let ref = Database.database().reference().child("Users")
                 ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
                     
                         let value = snapshot.value as? NSDictionary

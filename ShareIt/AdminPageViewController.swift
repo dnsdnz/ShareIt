@@ -11,12 +11,13 @@ import Firebase
 
 class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
-    var uid = ""
-    var postData = [String]()
         
     @IBOutlet weak var tableView: UITableView!
     
-     var ref:DatabaseReference?
+    var uid = ""
+    var postData = [String]()
+
+    var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
     
@@ -27,16 +28,25 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
         tableView.dataSource = self
         
         ref = Database.database().reference()
-       databaseHandle =  ref?.child("Posts").observe( .childAdded, with: { (snapshot) in
-            
-        let post = snapshot.value as? String  //convert value to string
         
-        if let actualPost = post{
-            self.postData.append(actualPost)
+        databaseHandle =  ref?.child("Products").observe( .childAdded, with: { (snapshot) in
             
+          //  let post = snapshot.key as? String  //convert value to string
+        
+            let value = snapshot.value as? NSDictionary
+            
+            let productName = value?["name"] as? String
+                      
+                       
+        if let actualPost = productName{
+            self.postData.append(actualPost)
+           
             self.tableView.reloadData()
         }
         })
+        
+        
+        
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

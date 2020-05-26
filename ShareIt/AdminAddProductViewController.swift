@@ -27,8 +27,10 @@ class AdminAddProductViewController: UIViewController {
     @IBAction func addButton(_ sender: Any) {
         
         
-        ref?.child("Posts").childByAutoId().setValue(textView.text)
+        ref?.child("Products").childByAutoId().setValue(textView.text)
         
+        
+      //  ["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"]
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }

@@ -16,6 +16,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtPass: UITextField!
     @IBOutlet weak var txtPassConf: UITextField!
     
+     var ref:DatabaseReference?
+    
     
     @IBAction func registerButton(_ sender: Any) {
         
@@ -30,13 +32,13 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPass.text!){ (user, error) in
          if error == nil {
             
-              let user = Auth.auth().currentUser
+            let user = Auth.auth().currentUser
             let uid = user!.uid
             
-            let ref = Database.database().reference().child("users")
-            
-            ref.child(uid).setValue(["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"])
-         
+           
+            self.ref = Database.database().reference()
+
+            self.ref?.child("Users").child(uid).setValue(["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"])
             
            let logPage: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
            

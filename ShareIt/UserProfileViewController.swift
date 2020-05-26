@@ -28,7 +28,7 @@ class UserProfileViewController: UIViewController {
         
         print(uid)
       
-        let ref = Database.database().reference().child("users")
+        let ref = Database.database().reference().child("Users")
         
         ref.child(uid).observeSingleEvent(of: .value){ (snapshot) in
                     
@@ -43,26 +43,12 @@ class UserProfileViewController: UIViewController {
             
             
         }
-
-        // ref.child("1/name").setValue("DenizC")  //change value in database
-        
-      /*  ref.childByAutoId().setValue(["name":"BDeniz","surname":"Cakmaz","city":"Gaziantep","password":"12345678","email":"mail@mail.com","age":"21","gender":"female","role":"U","phone":"12345678"])
-        
-            */   //Add new user
-       
-     /*
-        */         //read data from firebase
-        
-        
-       // ref.child("1").removeValue()
-    
-            //delete data from firebase
     
     }
     
     @IBAction func saveInfo(_ sender: Any) {
         
-        let ref = Database.database().reference().child("users")
+        let ref = Database.database().reference().child("Users")
          
          let name = txtName.text
          let surname = txtSurname.text
