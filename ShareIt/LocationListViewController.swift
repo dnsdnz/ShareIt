@@ -19,6 +19,7 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
        var ref:DatabaseReference?
        var databaseHandle:DatabaseHandle?
        
+     var locationName = ""
        
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -29,15 +30,13 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
            ref = Database.database().reference()
            
            databaseHandle =  ref?.child("Regions").observe( .childAdded, with: { (snapshot) in
-               
-             //  let post = snapshot.key as? String  //convert value to string
            
                let value = snapshot.value as? NSDictionary
                
-               let productName = value?["name"] as? String
+               let locationName = value?["name"] as? String
                          
                           
-           if let actualPost = productName{
+           if let actualPost = locationName{
                self.postData.append(actualPost)
               
                self.tableView.reloadData()
@@ -51,6 +50,7 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            return postData.count
        }
+    
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell2")
@@ -59,7 +59,18 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
            
            return cell!
        }
-        
+         
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+                let detail:LocationDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "LocationDetailViewController") as! LocationDetailViewController
+               
+                let locationName = postData[indexPath.row]
+            print(locationName)
+                detail.locationName = locationName
+                 
+              
+                self.navigationController?.pushViewController(detail, animated: true)
+            }
     
    
     }
