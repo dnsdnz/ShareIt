@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class LocationDetailViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class LocationDetailViewController: UIViewController {
       var databaseHandle:DatabaseHandle?
     
       var locationName = ""
+      var locX = 0.0
+      var locY = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,22 +40,30 @@ class LocationDetailViewController: UIViewController {
                   
                   if(locationName2 == self.locationName ){
                     
-                      let locationX = value?["x"] as! Double
-                      let locationY = value?["y"] as! Double
+                    self.locX = value?["x"] as! Double
+                    self.locY = value?["y"] as! Double
                       
-                    print(locationX)
-                    print(locationY)
+                    print(self.locX)
+                    print(self.locY)
                    
                     self.txtName.text = locationName2
                 
                   }
                   
-                  
-           
             }
                             })
                             
     }
+    
+    @IBAction func getRoad(_ sender: Any) {
+       
+       
+        let coordinate = CLLocationCoordinate2DMake(locX,locY)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = "Target location"
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
+    
     
 
 
