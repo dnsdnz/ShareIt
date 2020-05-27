@@ -30,7 +30,10 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
         ref = Database.database().reference()
         
         databaseHandle =  ref?.child("Products").observe( .childAdded, with: { (snapshot) in
-        
+      
+    
+            
+            
             let value = snapshot.value as? NSDictionary
             
             let productName = value?["name"] as? String
@@ -40,11 +43,12 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.postData.append(actualPost)
            
             self.tableView.reloadData()
-        }
-        })
-        
-        
-    }
+     }
+                     })
+                     
+                     
+                     
+                 }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postData.count

@@ -20,31 +20,43 @@ class MapViewController: UIViewController {
     var postData = [String]()
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
-          
-  
+    var dict = [[String:Any]]()
+
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let ref = Database.database().reference()
-           ref.child("Regions").observeSingleEvent(of: .childAdded){ (snapshot) in
-                       
-           
-               let value = snapshot.value as? NSDictionary
-               
-               let title = value?["name"] as? String
-               let latitude = value?["x"] as? String
-               let longitude = value?["y"] as? String
-                  
 
-                 let annotation = MKPointAnnotation()
-                 annotation.coordinate = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
-                 annotation.title = title
-                 self.mapView.addAnnotation(annotation)
-               
-               
-           }
+        ref = Database.database().reference()
+           databaseHandle =  ref?.child("Regions").observe( .childAdded, with: { (snapshot) in
+                    
+          
+                   let value = snapshot.value as? NSDictionary
+                
+                   let title = value?["name"] as! String
+                   let latitude = value?["x"] as! Double
+                   let longitude = value?["y"] as! Double
+                   
+            
+            self.dict.append(["title" :title, "longitude" : longitude,"latitude" : latitude])
+            
+         
+            self.show_locations(locations : self.dict)
+           })
+                        
        
+                        
+                    }
+    
+    func show_locations(locations : [[String: Any]]){
+       print(locations)
+        for location in locations{
+            let annotations = MKPointAnnotation()
+            annotations.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
+            annotations.title = location["title"] as? String
+            self.mapView.addAnnotation(annotations)
+        }
     }
     
     @IBAction func showList(_ sender: Any) {
