@@ -11,7 +11,11 @@ import FirebaseDatabase
 
 class AdminAddProductViewController: UIViewController {
 
-    @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var pickerRegion: UIPickerView!
+    @IBOutlet weak var pickerCategory: UIPickerView!
+    @IBOutlet weak var txtDetail: UITextView!
     
     var ref:DatabaseReference?
     
@@ -23,14 +27,12 @@ class AdminAddProductViewController: UIViewController {
 
        
     }
-    
+
     @IBAction func addButton(_ sender: Any) {
         
         
-        ref?.child("Products").childByAutoId().setValue(textView.text)
+        ref?.child("Products").childByAutoId().setValue( ["name":self.txtName.text!,"detail":self.txtDetail.text!,"category":"Clothes","region":"Karatas"])
         
-        
-      //  ["password":self.txtPass.text!,"email":self.txtEmail.text!,"role":"U"]
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }

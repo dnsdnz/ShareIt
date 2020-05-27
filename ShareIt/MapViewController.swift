@@ -22,7 +22,8 @@ class MapViewController: UIViewController {
     var databaseHandle:DatabaseHandle?
     var dict = [[String:Any]]()
 
-   
+    var X = 0.0
+    var Y = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class MapViewController: UIViewController {
                    let latitude = value?["x"] as! Double
                    let longitude = value?["y"] as! Double
                    
+            self.X = latitude
+            self.Y = longitude
+            
             
             self.dict.append(["title" :title, "longitude" : longitude,"latitude" : latitude])
             
@@ -58,6 +62,18 @@ class MapViewController: UIViewController {
             self.mapView.addAnnotation(annotations)
         }
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+           
+                let x = X
+                 let y = Y
+                 
+                 let coordinate = CLLocationCoordinate2DMake(x,y)
+                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                 mapItem.name = title
+                 mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
+      
+       }
     
     @IBAction func showList(_ sender: Any) {
            let tablePage: LocationListViewController = self.storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as! LocationListViewController

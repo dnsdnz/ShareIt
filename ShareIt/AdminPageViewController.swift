@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
         
@@ -20,7 +21,9 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
-    
+    var productName = ""
+   
+              
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,12 +35,9 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
         databaseHandle =  ref?.child("Products").observe( .childAdded, with: { (snapshot) in
       
     
-            
-            
             let value = snapshot.value as? NSDictionary
-            
             let productName = value?["name"] as? String
-                      
+   
                        
         if let actualPost = productName{
             self.postData.append(actualPost)
@@ -45,7 +45,6 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.tableView.reloadData()
      }
                      })
-                     
                      
                      
                  }
@@ -61,6 +60,19 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         return cell!
     }
+    
+     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            let detail:AdminEditProductViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdminEditProductViewController") as! AdminEditProductViewController
+           
+            let productName = postData[indexPath.row]
+            detail.productName = productName
+             
+          
+            self.navigationController?.pushViewController(detail, animated: true)
+        }
+     
      
  
 }
