@@ -60,7 +60,7 @@ class LocationDetailViewController: UIViewController {
        
         let coordinate = CLLocationCoordinate2DMake(locX,locY)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = "Target location"
+        mapItem.name = locationName
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
     

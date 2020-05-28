@@ -63,17 +63,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-           
-                let x = X
-                 let y = Y
-                 
-                 let coordinate = CLLocationCoordinate2DMake(x,y)
-                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-                 mapItem.name = title
-                 mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
-      
-       }
+
     
     @IBAction func showList(_ sender: Any) {
            let tablePage: LocationListViewController = self.storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as! LocationListViewController
@@ -90,6 +80,18 @@ class MapViewController: UIViewController {
                           
                     self.navigationController?.pushViewController(profilePage, animated: true)
        }
-       
+    
+  
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
+    {
+       print("tapped on pin ")
+       let coordinate = CLLocationCoordinate2DMake(X,Y)
+                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                 mapItem.name = "Target location"
+                 mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
+    
+   
     
 }

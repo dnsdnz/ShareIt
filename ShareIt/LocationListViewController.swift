@@ -43,8 +43,6 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
            }
            })
            
-           
-           
        }
       
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
