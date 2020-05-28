@@ -54,7 +54,7 @@ class MapViewController: UIViewController {
                     }
     
     func show_locations(locations : [[String: Any]]){
-       print(locations)
+      // print(locations)
         for location in locations{
             let annotations = MKPointAnnotation()
             annotations.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)

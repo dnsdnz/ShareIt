@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtSurname: UITextField!
@@ -21,17 +21,24 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var pickAge: UIPickerView!
     
     
-     var pickerAgeData: [String] = [String]()
-    
     var uid = ""
+    
+    var ageData = AgeData()
+    var genderData = GenderData()
+    var regionData = RegionData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.pickAge.delegate = self
-        self.pickAge.dataSource = self
-        
-        pickerAgeData = ["18","19", "20", "21", "22", "23"]
+        pickAge.delegate = ageData
+        pickAge.dataSource = ageData
+
+        pickGender.delegate = genderData
+        pickGender.dataSource = genderData
+
+        pickCity.delegate = regionData
+        pickCity.dataSource = regionData
+
       
         let ref = Database.database().reference().child("Users")
         
@@ -45,26 +52,69 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let name = value?["name"] as? String
             let surname = value?["surname"] as? String
             let phone = value?["phone"] as? String
-            //let age = value?["age"] as? String
-            //let gender = value?["gender"] as? String
-            //let region = value?["region"] as? String
 
             self.txtEmail.text = email
             self.txtPassword.text = password
             self.txtName.text = name
             self.txtSurname.text = surname
             self.txtPhone.text = phone
-            
-            
+          
         }
     
     }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+
+
+    class AgeData: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+        
+        var agePickerData = ["18", "19", "20", "21", "22", "23","24","25","26"]
+        
+        
+
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return agePickerData.count
+        }
+
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return agePickerData[row]
+        }
+    }
+
+    class GenderData: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
+        var genderPickerData = ["Female", "Male"]
+
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return genderPickerData.count
+        }
+
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return genderPickerData[row]
+        }
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-          return pickerAgeData.count
+
+    
+    class RegionData: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
+        var regionPickerData = ["İbrahimli", "Karataş","Kalyon","Emek","Akkent","Binevler","Cumhuriyet","Perilikaya","Güneykent","Kavaklık"]
+
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return regionPickerData.count
+        }
+
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return regionPickerData[row]
+        }
     }
     
 
@@ -78,11 +128,12 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
          let surname = txtSurname.text
          let password = txtPassword.text
          let phone = txtPhone.text
-        // let city = pickCity
-        // let gender = pickGender
-        //let age = pickAge
         
-        ref.child(uid).setValue(["name":name,"surname":surname,"region":"Emek","password":password,"age":"22","gender":"female","phone":phone,"role":"U","email":email])
+        let age = pickAge.delegate?.pickerView!(pickAge, titleForRow: pickAge.selectedRow(inComponent: 0), forComponent: 0)
+        let gender = pickGender.delegate?.pickerView!(pickGender, titleForRow: pickGender.selectedRow(inComponent: 0), forComponent: 0)
+        let region = pickCity.delegate?.pickerView!(pickCity, titleForRow: pickCity.selectedRow(inComponent: 0), forComponent: 0)
+        
+        ref.child(uid).setValue(["name":name,"surname":surname,"region":region,"password":password,"age":age,"gender":gender,"phone":phone,"role":"U","email":email])
       }
     
     

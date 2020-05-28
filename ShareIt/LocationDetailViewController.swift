@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 import MapKit
 
-class LocationDetailViewController: UIViewController {
+class LocationDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
 
     
     @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
       var postData = [String]()
       var ref:DatabaseReference?
@@ -25,35 +27,49 @@ class LocationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(locationName)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        txtName.text = locationName
         
              ref = Database.database().reference()
-               databaseHandle =  ref?.child("Regions").observe( .childAdded, with: { (snapshot) in
              
-                   let value = snapshot.value as? NSDictionary
-                   let locationName2 = value?["name"] as? String
-          
-                              
-               if let actualPost = locationName2{
-                   self.postData.append(actualPost)
-                  
-                  if(locationName2 == self.locationName ){
-                    
-                    self.locX = value?["x"] as! Double
-                    self.locY = value?["y"] as! Double
-                      
-                    print(self.locX)
-                    print(self.locY)
-                   
-                    self.txtName.text = locationName2
+             databaseHandle =  ref?.child("Products").observe( .childAdded, with: { (snapshot) in
+           
+         
+                 let value = snapshot.value as? NSDictionary
+                 let productRegion = value?["region"] as? String
+                 let productName = value?["name"] as? String
+        
+                            
+             if let actualPost = productRegion{
                 
-                  }
-                  
-            }
-                            })
+                
+                if(self.locationName == actualPost){
+                    self.postData.append(productName!)
+                }
+                
+                 self.tableView.reloadData()
+          }
+                          })
+                          
+                       
                             
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = tableView.dequeueReusableCell(withIdentifier: "cell3")
+              
+              cell?.textLabel?.text = postData[indexPath.row]
+              
+              return cell!
+    }
+    
     
     @IBAction func getRoad(_ sender: Any) {
        
@@ -63,8 +79,8 @@ class LocationDetailViewController: UIViewController {
         mapItem.name = locationName
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
-    
-    
 
+
+    
 
 }

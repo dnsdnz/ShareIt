@@ -63,9 +63,7 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
                 let detail:LocationDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "LocationDetailViewController") as! LocationDetailViewController
                
                 let locationName = postData[indexPath.row]
-            print(locationName)
                 detail.locationName = locationName
-                 
               
                 self.navigationController?.pushViewController(detail, animated: true)
             }
