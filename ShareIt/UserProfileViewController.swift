@@ -19,6 +19,7 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var pickCity: UIPickerView!
     @IBOutlet weak var pickGender: UIPickerView!
     @IBOutlet weak var pickAge: UIPickerView!
+    @IBOutlet weak var imgView: UIImageView!
     
     
     var uid = ""
@@ -143,6 +144,10 @@ class UserProfileViewController: UIViewController {
         let loginPage: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                   
             self.navigationController?.pushViewController(loginPage, animated: true)
+    }
+    
+    
+    @IBAction func choosePic(_ sender: Any) {
     }
     
 }
