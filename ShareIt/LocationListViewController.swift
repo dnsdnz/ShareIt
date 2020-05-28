@@ -13,7 +13,7 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-     var uid = ""
+       var uid = ""
        var postData = [String]()
 
        var ref:DatabaseReference?

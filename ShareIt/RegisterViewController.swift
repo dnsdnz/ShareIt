@@ -18,7 +18,6 @@ class RegisterViewController: UIViewController {
     
      var ref:DatabaseReference?
     
-    
     @IBAction func registerButton(_ sender: Any) {
         
         if txtPass.text != txtPassConf.text {

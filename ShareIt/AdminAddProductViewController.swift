@@ -19,19 +19,28 @@ class AdminAddProductViewController: UIViewController {
     
     var ref:DatabaseReference?
     
+    var categoryData = CategoryData()
+    var regionData = RegionData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
+        pickerRegion.delegate = regionData
+        pickerRegion.dataSource = regionData
 
+        pickerCategory.delegate = categoryData
+        pickerCategory.dataSource = categoryData
        
     }
 
     @IBAction func addButton(_ sender: Any) {
         
-        
-        ref?.child("Products").childByAutoId().setValue( ["name":self.txtName.text!,"detail":self.txtDetail.text!,"category":"Clothes","region":"Karatas"])
+        let category = pickerCategory.delegate?.pickerView!(pickerCategory, titleForRow: pickerCategory.selectedRow(inComponent: 0), forComponent: 0)
+        let region = pickerRegion.delegate?.pickerView!(pickerRegion, titleForRow: pickerRegion.selectedRow(inComponent: 0), forComponent: 0)
+               
+        ref?.child("Products").childByAutoId().setValue( ["name":self.txtName.text!,"detail":self.txtDetail.text!,"category":category,"region":region])
         
         
         presentingViewController?.dismiss(animated: true, completion: nil)
@@ -44,3 +53,37 @@ class AdminAddProductViewController: UIViewController {
     
     
 }
+
+class RegionData: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+       
+       var regionPickerData = ["İbrahimli", "Karataş","Kalyon","Emek","Akkent","Binevler","Cumhuriyet","Perilikaya","Güneykent","Kavaklık"]
+       
+
+       func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+       }
+
+       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+           return regionPickerData.count
+       }
+
+       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return regionPickerData[row]
+       }
+   }
+
+   class CategoryData: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
+       var categoryPickerData = ["Clothes", "Electronic","Food","Medicine","Stationery","Furniture","Toy"]
+
+       func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+       }
+
+       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+           return categoryPickerData.count
+       }
+
+       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return categoryPickerData[row]
+       }
+   }

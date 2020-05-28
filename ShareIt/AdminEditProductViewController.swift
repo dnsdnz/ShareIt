@@ -48,14 +48,8 @@ class AdminEditProductViewController: UIViewController {
                     self.txtRegion.text = productRegion
                 }
                 
-                
-         
           }
                           })
-                          
-                          
                       }
-   
-
     }
     
