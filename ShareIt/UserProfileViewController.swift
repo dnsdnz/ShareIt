@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtSurname: UITextField!
@@ -20,6 +20,8 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var pickGender: UIPickerView!
     @IBOutlet weak var pickAge: UIPickerView!
     @IBOutlet weak var imgView: UIImageView!
+    
+    var imagePicker = UIImagePickerController()
     
     
     var uid = ""
@@ -40,6 +42,7 @@ class UserProfileViewController: UIViewController {
         pickCity.delegate = regionData
         pickCity.dataSource = regionData
 
+        let storage = Storage.storage()
       
         let ref = Database.database().reference().child("Users")
         
@@ -148,6 +151,25 @@ class UserProfileViewController: UIViewController {
     
     
     @IBAction func choosePic(_ sender: Any) {
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+           self.dismiss(animated: true, completion: { () -> Void in
+
+           })
+
+           imgView.image = image
+       }
     
 }
