@@ -14,12 +14,11 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
     @IBOutlet weak var tableView: UITableView!
     
        var uid = ""
+       var locationName = ""
        var postData = [String]()
 
        var ref:DatabaseReference?
        var databaseHandle:DatabaseHandle?
-       
-     var locationName = ""
        
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -32,9 +31,7 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
            databaseHandle =  ref?.child("Regions").observe( .childAdded, with: { (snapshot) in
            
                let value = snapshot.value as? NSDictionary
-               
                let locationName = value?["name"] as? String
-                         
                           
            if let actualPost = locationName{
                self.postData.append(actualPost)
@@ -67,9 +64,4 @@ class LocationListViewController: UIViewController,UITableViewDelegate,UITableVi
               
                 self.navigationController?.pushViewController(detail, animated: true)
             }
-    
-   
     }
-    
-
-   

@@ -11,18 +11,17 @@ import Firebase
 
 class AdminEditProductViewController: UIViewController {
     
-    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtCategory: UITextField!
     @IBOutlet weak var txtRegion: UITextField!
     @IBOutlet weak var txtDetail: UITextView!
     
-    
     var postData = [String]()
+    var productName = ""
+    
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
-  
-    var productName = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +56,6 @@ class AdminEditProductViewController: UIViewController {
         
         
         
-    }
-    
+            }
     }
     

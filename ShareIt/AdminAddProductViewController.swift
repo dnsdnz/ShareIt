@@ -42,7 +42,6 @@ class AdminAddProductViewController: UIViewController {
                
         ref?.child("Products").childByAutoId().setValue( ["name":self.txtName.text!,"detail":self.txtDetail.text!,"category":category,"region":region])
         
-        
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -58,7 +57,6 @@ class RegionData: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
        
        var regionPickerData = ["İbrahimli", "Karataş","Kalyon","Emek","Akkent","Binevler","Cumhuriyet","Perilikaya","Güneykent","Kavaklık"]
        
-
        func numberOfComponents(in pickerView: UIPickerView) -> Int {
            return 1
        }
@@ -73,6 +71,7 @@ class RegionData: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
    }
 
    class CategoryData: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
+    
        var categoryPickerData = ["Clothes", "Electronic","Food","Medicine","Stationery","Furniture","Toy"]
 
        func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -18,8 +18,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         
-    
-        
         Auth.auth().signIn(withEmail: mailText.text!, password: passText.text!) { (user, error) in
            if error == nil{
             
@@ -64,12 +62,4 @@ class LoginViewController: UIViewController {
             
             self.navigationController?.pushViewController(regPage, animated: true)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    
-    }
-
-    
 }

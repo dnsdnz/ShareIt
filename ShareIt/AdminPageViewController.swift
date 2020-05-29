@@ -12,17 +12,14 @@ import Firebase
 
 class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
-        
     @IBOutlet weak var tableView: UITableView!
     
     var uid = ""
+    var productName = ""
     var postData = [String]()
 
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
-    
-    var productName = ""
-   
               
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +31,18 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         databaseHandle =  ref?.child("Products").observe( .childAdded, with: { (snapshot) in
       
-    
             let value = snapshot.value as? NSDictionary
             let productName = value?["name"] as? String
    
                        
-        if let actualPost = productName{
-            self.postData.append(actualPost)
+            if let actualPost = productName{
+                self.postData.append(actualPost)
            
-            self.tableView.reloadData()
-     }
+                self.tableView.reloadData()
+            }
                      })
                      
-                     
-                 }
+        }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postData.count
@@ -68,7 +63,6 @@ class AdminPageViewController: UIViewController,UITableViewDelegate,UITableViewD
            
             let productName = postData[indexPath.row]
             detail.productName = productName
-             
           
             self.navigationController?.pushViewController(detail, animated: true)
         }

@@ -23,9 +23,7 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
     
     var imagePicker = UIImagePickerController()
     
-    
     var uid = ""
-    
     var ageData = AgeData()
     var genderData = GenderData()
     var regionData = RegionData()
@@ -42,7 +40,7 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
         pickCity.delegate = regionData
         pickCity.dataSource = regionData
 
-        let storage = Storage.storage()
+       // let storage = Storage.storage()
       
         let ref = Database.database().reference().child("Users")
         
@@ -67,11 +65,9 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
     
     }
 
-
     class AgeData: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
         
         var agePickerData = ["18","19","20","21","22","23","24","25","26","27","28","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70"]
-        
 
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1
@@ -102,8 +98,6 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
         }
     }
     
-
-    
     class RegionData: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         var regionPickerData = ["İbrahimli", "Karataş","Kalyon","Emek","Akkent","Binevler","Cumhuriyet","Perilikaya","Güneykent","Kavaklık"]
 
@@ -120,7 +114,6 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
         }
     }
     
-
     
     @IBAction func saveInfo(_ sender: Any) {
         
@@ -132,11 +125,11 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
          let password = txtPassword.text
          let phone = txtPhone.text
         
-        let age = pickAge.delegate?.pickerView!(pickAge, titleForRow: pickAge.selectedRow(inComponent: 0), forComponent: 0)
-        let gender = pickGender.delegate?.pickerView!(pickGender, titleForRow: pickGender.selectedRow(inComponent: 0), forComponent: 0)
-        let region = pickCity.delegate?.pickerView!(pickCity, titleForRow: pickCity.selectedRow(inComponent: 0), forComponent: 0)
+         let age = pickAge.delegate?.pickerView!(pickAge, titleForRow: pickAge.selectedRow(inComponent: 0), forComponent: 0)
+         let gender = pickGender.delegate?.pickerView!(pickGender, titleForRow: pickGender.selectedRow(inComponent: 0), forComponent: 0)
+         let region = pickCity.delegate?.pickerView!(pickCity, titleForRow: pickCity.selectedRow(inComponent: 0), forComponent: 0)
         
-        ref.child(uid).setValue(["name":name,"surname":surname,"region":region,"password":password,"age":age,"gender":gender,"phone":phone,"role":"U","email":email])
+         ref.child(uid).setValue(["name":name,"surname":surname,"region":region,"password":password,"age":age,"gender":gender,"phone":phone,"role":"U","email":email])
       }
     
     
@@ -151,7 +144,6 @@ class UserProfileViewController: UIViewController ,UIImagePickerControllerDelega
     
     
     @IBAction func choosePic(_ sender: Any) {
-        
         
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             print("Button capture")
